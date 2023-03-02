@@ -1,8 +1,10 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 
+const cors = require("cors");
 const app = express();
 app.use(express.json())
+app.use(cors({ origin: `*` }));
 
 app.post('/api/login',(req,res)=>{
     //you can do this either synchronously or asynchronously
